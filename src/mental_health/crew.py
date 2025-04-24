@@ -18,16 +18,16 @@ class MentalHealth():
     # If you would like to add tools to your agents, you can learn more about it here:
     # https://docs.crewai.com/concepts/agents#agent-tools
     @agent
-    def researcher(self) -> Agent:
+    def psychoanalyst(self) -> Agent:
         return Agent(
-            config=self.agents_config['researcher'],
+            config=self.agents_config['psychoanalyst'],
             verbose=True
         )
 
     @agent
-    def reporting_analyst(self) -> Agent:
+    def psychoanalyst_reporter(self) -> Agent:
         return Agent(
-            config=self.agents_config['reporting_analyst'],
+            config=self.agents_config['psychoanalyst_reporter'],
             verbose=True
         )
 
@@ -35,15 +35,15 @@ class MentalHealth():
     # task dependencies, and task callbacks, check out the documentation:
     # https://docs.crewai.com/concepts/tasks#overview-of-a-task
     @task
-    def research_task(self) -> Task:
+    def psychoanalyst_task(self) -> Task:
         return Task(
-            config=self.tasks_config['research_task'],
+            config=self.tasks_config['psychoanalyst_task'],
         )
 
     @task
-    def reporting_task(self) -> Task:
+    def psychoanalyst_reporter_task(self) -> Task:
         return Task(
-            config=self.tasks_config['reporting_task'],
+            config=self.tasks_config['psychoanalyst_reporter_task'],
             output_file='report.md'
         )
 
